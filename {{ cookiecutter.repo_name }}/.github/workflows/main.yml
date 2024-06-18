@@ -36,7 +36,7 @@ jobs:
           python-version: 3
           auto-activate-base: false
 
-      - name: install diffpy.utils requirements
+      - name: install ${{ github.event.repository.name }} requirements
         shell: bash -l {0}
         run: |
           conda config --set always_yes yes --set changeps1 no
@@ -46,7 +46,7 @@ jobs:
           conda install --file requirements/test.txt
           pip install .
 
-      - name: Validate diffpy.utils
+      - name: Validate ${{ github.event.repository.name }}
         shell: bash -l {0}
         run: |
           conda activate test
